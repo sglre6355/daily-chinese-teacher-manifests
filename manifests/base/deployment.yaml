@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daily-chinese-teacher
+spec:
+  selector:
+    matchLabels:
+      app: daily-chinese-teacher
+  template:
+    metadata:
+      labels:
+        app: daily-chinese-teacher
+    spec:
+      containers:
+        - name: daily-chinese-teacher
+          image: ghcr.io/sglre6355/daily-chinese-teacher
+          envFrom:
+            - secretRef:
+                name: daily-chinese-teacher
