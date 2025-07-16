@@ -14,6 +14,9 @@ spec:
       containers:
         - name: daily-chinese-teacher
           image: ghcr.io/sglre6355/daily-chinese-teacher
+          env:
+            - name: TZ
+              value: Asia/Tokyo
           envFrom:
             - secretRef:
                 name: daily-chinese-teacher
